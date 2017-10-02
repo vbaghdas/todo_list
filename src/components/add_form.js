@@ -8,8 +8,6 @@ import { addTodo } from '../actions';
 class AddForm extends Component {
 
     handleAddItem(vals) {
-        console.log('Form vals', vals);
-
         this.props.addTodo(vals).then( () => {
             this.props.history.push('/');
         });
@@ -30,7 +28,7 @@ class AddForm extends Component {
         const { handleSubmit, reset } = this.props;
         return (
             <div>
-                <h1 className="text-center">Add Todo Item</h1>
+                <h1 className="text-center">Add Todo Task</h1>
                 <Link to="/" className="btn btn-outline-primary my-3">Go Back</Link>
                 <form onSubmit={handleSubmit((vals) => this.handleAddItem(vals))}>
                     <Field name="title" component={this.renderInput} type="text" label="Title"/>

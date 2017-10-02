@@ -5,7 +5,6 @@ import { getSingleTodo, toggleComplete, deleteSingleTodo } from '../actions';
 
 class SingleItem extends Component {
     componentWillMount() {
-        console.log('Item ID', this.props.match.params.id);
         this.props.getSingleTodo(this.props.match.params.id);
     }
 
@@ -18,8 +17,6 @@ class SingleItem extends Component {
     }
 
     render() {
-        console.log('SingleItem props', this.props);
-
         const { todo } = this.props;
 
         if(!todo){
@@ -58,13 +55,10 @@ class SingleItem extends Component {
     }
 }
 
-function mstp (state) {
+function mapStateToProps (state) {
     return {
         todo: state.todos.single
     }
 }
 
-export default connect(mstp, {getSingleTodo, toggleComplete, deleteSingleTodo})(SingleItem);
-
-
-//add all information under title, add delete item (axios.delete)
+export default connect(mapStateToProps, {getSingleTodo, toggleComplete, deleteSingleTodo})(SingleItem);

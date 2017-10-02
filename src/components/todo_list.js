@@ -10,8 +10,6 @@ class TodoList extends Component {
     }
 
     render () {
-        // console.log('TodoList Props:', this.props);
-
         const { todos } = this.props;
 
         if(!todos.length){
@@ -19,28 +17,32 @@ class TodoList extends Component {
         }
 
         const todosList = this.props.todos.map((item, index) => {
-        return <ListItem key={index} listItem={item}/>
+        return <tr><ListItem key={index} listItem={item}/></tr>
         });
 
         return (
             <div>
                 <h1 className="text-center">Todo List</h1>
                 <div className="justify-content-center d-flex my-3">
-                    <Link to="/add-todo" className="btn btn-outline-primary">Add Item</Link>
+                    <Link to="/add-todo" className="btn btn-outline-info my-3">Add Task</Link>
                 </div>
-                <ul className="list-group mt-5">
-                    {todosList}
-                </ul>
+                <table className="table table-inverse">
+                    <tr>
+                        <th className="text-center"><h3>Task Items</h3></th>
+                    </tr>
+                    <tbody>
+                        {todosList}
+                    </tbody>
+                </table>
             </div>
         )
     }
-
 }
 
-function mstp(state) {
+function mapStateToProps(state) {
     return  {
         todos: state.todos.all
     }
 }
 
-export default connect(mstp, {getAll})(TodoList);
+export default connect(mapStateToProps, {getAll})(TodoList);
