@@ -3,5 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default (props) => {
     const { title, complete, _id } = props.listItem;
-    return <th scope="row" className={`bg-${complete ? 'success' : 'danger' }`}><Link to={`/view-item/${_id}`} >{title}</Link></th>
+    return <th scope="row" className="text-center">
+                <Link to={`/view-item/${_id}`} className={`text-${complete ? 'info' : 'danger'}`}>{title}</Link>
+           </th>
 }

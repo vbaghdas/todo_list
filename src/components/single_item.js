@@ -13,7 +13,9 @@ class SingleItem extends Component {
     }
 
     handleDelete() {
-        this.props.deleteSingleTodo(this.props.match.params.id);
+        this.props.deleteSingleTodo(this.props.match.params.id).then( (push) => {
+            this.props.history.push("/");
+        }) 
     }
 
     render() {

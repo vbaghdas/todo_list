@@ -29,11 +29,11 @@ class AddForm extends Component {
         return (
             <div>
                 <h1 className="text-center">Add Todo Task</h1>
-                <Link to="/" className="btn btn-outline-primary my-3">Go Back</Link>
+                <Link to="/" className="btn btn-outline-success my-3">Go Back</Link>
                 <form onSubmit={handleSubmit((vals) => this.handleAddItem(vals))}>
                     <Field name="title" component={this.renderInput} type="text" label="Title"/>
                     <Field name="details" component={this.renderInput} type="text" label="Details"/>
-                    <button className="btn btn-outline-success mr-3">Add Item</button>
+                    <button className="btn btn-outline-info mr-3">Add Task</button>
                     <button type="button" className="btn btn-outline-danger" onClick={reset}>Reset Form</button>
                 </form>
             </div>
