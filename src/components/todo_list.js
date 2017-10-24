@@ -22,15 +22,15 @@ class TodoList extends Component {
 
         return (
             <div>
-                <h1 className="text-center">My Todo Tasks</h1>
-                <div className="justify-content-center d-flex my-3">
-                    <Link to="/add-todo" className="btn btn-outline-info my-3">Add Task</Link>
-                </div>
-                <table className="table table-inverse">
+                <h1 className="text-center">TO-DO LIST</h1>
+                <table className="table table-inverse mt-5">
                     <tbody>
                         {todosList}
                     </tbody>
                 </table>
+                <div className="justify-content-center d-flex my-3">
+                    <Link to="/add-todo" className="btn btn-outline-info my-3">Add Task</Link>
+                </div>
             </div>
         )
     }
