@@ -1,23 +1,24 @@
-# React Starter
+# TODO LIST
 
-> This repo contains boilerplate code to aid in the creation of a new React app with Redux. Follow the below setup instructions to get started.
+## Technologies: React.js, Redux, JavaScript, HTML5, CSS3
+
+#### Description
+
+A Content Management System that allows users to create, update, delete, and check task items as complete.
+Utilized Axios calls to post, get, and delete tasks from a Mongo database, and React/Redux to track the state of the application. Implemented Bootstrap4 to design and create a clean mobile-first responsive experience.
 
 ### Setup Instructions
 
 > 1. Fork this repo
-> 1. Clone your forked copy of this repo
+> 2. Clone your forked copy of this repo
 >    - `git clone https://github.com/[Your Username]/react_starter.git`
-> 1. Change directory into the newly cloned repo
+> 3. Change directory into the newly cloned repo
 >    - `cd react_starter`
-> 1. Install dependencies 
+> 4. Install dependencies 
 >    - `npm install`
-> 1. Start dev server
+> 5. Start dev server
 >    - `npm start`
-> 1. Open a browser and navigate to `localhost:3000` You should see a page that displays "Welcome to React!"
+> 6. Open a browser and navigate to `localhost:3000`
 
-### Bundle For Deployment
-
-> 1. Run webpack to bundle files
->    - `npm run bundle`
-> 
-> **NOTE:** *After bundling you can not directly run your app locally. You must run your app from the root directory of a server.*
+##### DEMO IMAGE: 
+![alt text](http://dev.vachebaghdassarian.com/images/portfolio/todo_list.png "TODO List")
