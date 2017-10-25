@@ -11,9 +11,9 @@ Utilized Axios calls to post, get, and delete tasks from a Mongo database, and R
 
 > 1. Fork this repo
 > 2. Clone your forked copy of this repo
->    - `git clone https://github.com/[Your Username]/react_starter.git`
+>    - `git clone https://github.com/[Your Username]/todo_list.git`
 > 3. Change directory into the newly cloned repo
->    - `cd react_starter`
+>    - `cd todo_list`
 > 4. Install dependencies 
 >    - `npm install`
 > 5. Start dev server
