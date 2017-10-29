@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 
 export default (props) => {
     const { title, complete, _id } = props.listItem;
-    return <span className="title">
+    return <div className="title">
                 <Link to={`/view-item/${_id}`}> 
-                    <i className={`material-icons circle ${complete ? 'teal white-text' : 'grey white-text'}`}>search</i>
+                    <i className={`material-icons circle ${complete ? 'teal white-text' : 'grey darken-3 red-text'}`}>search</i>
+                    <i className={`material-icons right ${complete ? 'white-text' : 'red-text'}`}>
+                        {complete ? 'check' : 'close'}
+                    </i>
                 </Link>
                 <Link to={`/view-item/${_id}`} className={`${complete ? 'teal-text' : 'grey-text'}`}>
                     {title}
                 </Link>
-           </span>
+           </div>
 }

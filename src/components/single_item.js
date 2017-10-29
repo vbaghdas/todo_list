@@ -27,9 +27,9 @@ class SingleItem extends Component {
         const { completed } = this.props.todo;
         const dateToFormat = new Date(parseInt(completed));
         if(completed === null){
-            return <b className="red-text">Not Complete</b>;
+            return <p className="red-text right">Not Complete</p>;
         } else {
-            return <Moment format="dddd, MMM Do YYYY, h:mm:ss a">{dateToFormat}</Moment>;
+            return <p className="orange-text right">Completed: <Moment format="dddd, MMM Do YYYY, h:mm:ss a">{dateToFormat}</Moment></p>;
         }
     }
 
@@ -42,18 +42,21 @@ class SingleItem extends Component {
         
         return (
             <div className="todoList">
-                <h4>Todo Item</h4>
+                <h4>My Task</h4>
                 <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
                 <ul className="collection">
                     <li className="collection-item avatar">
-                        <i className="material-icons circle teal lighten-1">{ todo.complete ? 'check' : 'clear' }</i>
+                        <i className={`material-icons circle lighten-1 ${todo.complete ? 'teal white-text' : 'red white-text'}`}>
+                            { todo.complete ? 'check' : 'close' }
+                        </i>
                         <span className="title teal-text">{todo.title}</span>
                         <p className="details grey-text">{todo.details}</p>
+                        { this.handleDate() }
                         <p className="grey-text">Created: <Moment format="dddd, MMM Do YYYY, h:mm:ss a">{dateToFormat}</Moment></p>
-                        <p className="orange-text">Completed: {this.handleDate()}</p>
                     </li>
                 </ul>
                 <button type="button" className="btn waves-effect waves-light" onClick={() => this.handleToggle()}>
+                    <i className="material-icons right">{ todo.complete ? 'cancel' : 'check_circle' }</i>
                     { todo.complete ? 'Incomplete' : 'Complete' }
                 </button>
                 <button type="button" className="btn waves-effect waves-light" onClick={() => this.handleDelete()}>
