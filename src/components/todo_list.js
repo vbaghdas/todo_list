@@ -13,23 +13,24 @@ class TodoList extends Component {
         const { todos } = this.props;
 
         if(!todos.length){
-            return <h1>Loading...</h1>
+            return <div className="progress"><div className="indeterminate"></div></div>
         }
 
         const todosList = this.props.todos.map((item, index) => {
-        return <tr><ListItem key={index} listItem={item}/></tr>
+            return <li key={index} className="collection-item avatar"><ListItem key={index} listItem={item}/></li>
         });
 
         return (
-            <div>
-                <h1 className="text-center">TO-DO LIST</h1>
-                <table className="table table-inverse mt-5">
-                    <tbody>
+            <div className="todoList">
+                <h4>My List</h4>
+                    <ul className="collection">
                         {todosList}
-                    </tbody>
-                </table>
-                <div className="justify-content-center d-flex my-3">
-                    <Link to="/add-todo" className="btn btn-outline-info my-3">Add Task</Link>
+                    </ul>
+                <div className="">
+                    <Link to="/add-todo">
+                        <button className="btn waves-effect waves-light">
+                        <i className="material-icons right">add_circle</i>add task</button>
+                    </Link>
                 </div>
             </div>
         )

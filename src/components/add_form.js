@@ -16,10 +16,10 @@ class AddForm extends Component {
     renderInput({ input, label, type, meta: {touched, error }}) {
         const hasError = touched && error;
         return (
-            <div className={`form-group ${hasError ? 'has-danger' : ''}`}>
-                <label className="col-form-label">{label}</label>
-                <input {...input} className={`form-control ${hasError ? 'form-control-danger' : ''}`} type={type ? type: 'text'}/>
-                <div className="form-control-feedback">{hasError}</div>
+            <div className={`formGroup ${hasError ? 'formError' : ''}`}>
+                <label className="formLabel">{label}</label>
+                <input {...input} className={`formControl ${hasError ? 'formControlError' : ''}`} type={type ? type: 'text'}/>
+                <div className="formFeedback">{hasError}</div>
             </div>
         )
     }
@@ -27,14 +27,22 @@ class AddForm extends Component {
     render() {
         const { handleSubmit, reset } = this.props;
         return (
-            <div>
-                <h1 className="text-center">Add Todo Task</h1>
-                <Link to="/" className="btn btn-outline-success my-3">Go Back</Link>
+            <div className="todoList">
+                <h4>Add Task</h4>
+                <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
                 <form onSubmit={handleSubmit((vals) => this.handleAddItem(vals))}>
-                    <Field name="title" component={this.renderInput} type="text" label="Title"/>
-                    <Field name="details" component={this.renderInput} type="text" label="Details"/>
-                    <button className="btn btn-outline-info mr-3">Add Task</button>
-                    <button type="button" className="btn btn-outline-danger" onClick={reset}>Reset Form</button>
+                    <div className="input-field col s6">
+                        <Field name="title" component={this.renderInput} type="text" label="Title"/>
+                    </div>
+                    <div className="input-field col s6">
+                        <Field name="details" component={this.renderInput} type="text" label="Details"/>
+                    </div>
+                    <button type="submit" className="btn waves-effect waves-light">
+                        <i className="material-icons right">add_circle</i>add task
+                    </button>
+                    <button type="button" className="btn waves-effect waves-light" onClick={reset}>
+                        <i className="material-icons right">refresh</i>reset
+                    </button>
                 </form>
             </div>
             )

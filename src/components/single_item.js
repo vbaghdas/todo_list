@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getSingleTodo, toggleComplete, deleteSingleTodo } from '../actions';
+import Moment from 'react-moment';
 
 class SingleItem extends Component {
+    constructor(props){
+        super(props);
+        this.handleDate = this.handleDate.bind(this);
+    }
     componentWillMount() {
         this.props.getSingleTodo(this.props.match.params.id);
     }
@@ -18,40 +23,42 @@ class SingleItem extends Component {
         }) 
     }
 
+    handleDate(props){
+        const { completed } = this.props.todo;
+        const dateToFormat = new Date(parseInt(completed));
+        if(completed === null){
+            return <b className="red-text">Not Complete</b>;
+        } else {
+            return <Moment format="dddd, MMM Do YYYY, h:mm:ss a">{dateToFormat}</Moment>;
+        }
+    }
+
     render() {
         const { todo } = this.props;
-
         if(!todo){
-            return <h1 className="text-center">Loading...</h1>
+            return  <div className="progress"><div className="indeterminate"></div></div>
         }
+        const dateToFormat = new Date(parseInt(todo.created));
+        
         return (
-            <div>
-                <h1>Todo Item</h1>
-                <Link to="/" className="btn btn-outline-info my-3">Go Back</Link>
-                <table className="table table-bordered table-inverse">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Details</th>
-                        <th>Timestamp</th>
-                        <th>ID</th>
-                        <th>Complete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>{todo.title}</td>
-                        <td>{todo.details}</td>
-                        <td>{todo.created}</td>
-                        <td>{todo._id}</td>
-                        <td className="text-warning">{todo.complete.toString()}</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <button className="btn btn-outline-warning mr-3" onClick={() => this.handleToggle()} >{ todo.complete ? 'Incomplete' : 'Complete' }</button>
-                <button className="btn btn-outline-danger" onClick={() => this.handleDelete()}>Delete</button>
+            <div className="todoList">
+                <h4>Todo Item</h4>
+                <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
+                <ul className="collection">
+                    <li className="collection-item avatar">
+                        <i className="material-icons circle teal lighten-1">{ todo.complete ? 'check' : 'clear' }</i>
+                        <span className="title teal-text">{todo.title}</span>
+                        <p className="details grey-text">{todo.details}</p>
+                        <p className="grey-text">Created: <Moment format="dddd, MMM Do YYYY, h:mm:ss a">{dateToFormat}</Moment></p>
+                        <p className="orange-text">Completed: {this.handleDate()}</p>
+                    </li>
+                </ul>
+                <button type="button" className="btn waves-effect waves-light" onClick={() => this.handleToggle()}>
+                    { todo.complete ? 'Incomplete' : 'Complete' }
+                </button>
+                <button type="button" className="btn waves-effect waves-light" onClick={() => this.handleDelete()}>
+                    <i className="material-icons right">remove_circle</i>delete
+                </button>
             </div>
         )
     }

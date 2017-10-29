@@ -1,4 +1,39 @@
 body {
-    background: #222;
+    background: url(bgimage.jpg);
     color: #FFF;
+}
+
+/* Navbar */
+nav i.material-icons {
+    font-size: 35px;
+}
+.clock {
+    margin-left: 15px;
+}
+
+/* All Buttons */
+.btn {
+    margin: 15px 15px 15px 0;
+}
+
+/* Todo List */
+.todoList {
+    margin-top: 50px;
+}
+
+/* Form */
+.formLabel.active {
+    color: #26a69a;
+}
+.formFeedback {
+    margin-bottom: 25px;
+    color: #EA3814;
+}
+
+/* Collection List */
+.collection {
+    margin-top: 25px;
+}
+.collection .collection-item.avatar {
+    background-color: rgba(34,34,34,0.5);
 }
