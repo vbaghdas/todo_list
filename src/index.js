@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-// import reduxPromise from 'redux-promise';
+import { HashRouter } from 'react-router-dom';
 import promise from './middleware/promise';
 import logger from './middleware/logger';
 import rootReducer from './reducers';
@@ -14,9 +13,9 @@ const createStoreWithMiddleWare = applyMiddleware(promise, logger)(createStore);
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleWare(rootReducer)}>
-        <Router>
+        <HashRouter>
             <App/>
-        </Router>
+        </HashRouter>
     </Provider>,
     document.getElementById('root')
 );
