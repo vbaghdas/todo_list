@@ -6,7 +6,7 @@ export default (props) => {
     return <div className="title">
                 <Link to={`/view-item/${_id}`}> 
                     <i className={`material-icons circle ${complete ? 'teal white-text' : 'grey darken-3 red-text'}`}>search</i>
-                    <i className={`material-icons right ${complete ? 'white-text' : 'red-text'}`}>
+                    <i className={`material-icons right ${complete ? 'teal-text' : 'red-text'}`}>
                         {complete ? 'check' : 'close'}
                     </i>
                 </Link>
