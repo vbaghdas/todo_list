@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default (props) => {
+    
     const { title, complete, _id } = props.listItem;
     return <div className="title">
                 <Link to={`/view-item/${_id}`}> 

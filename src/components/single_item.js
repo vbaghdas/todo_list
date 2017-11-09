@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getSingleTodo, toggleComplete, deleteSingleTodo } from '../actions';
+import Header from './header';
 import Moment from 'react-moment';
 
 class SingleItem extends Component {
+    
     constructor(props){
         super(props);
         this.handleDate = this.handleDate.bind(this);
@@ -41,8 +43,8 @@ class SingleItem extends Component {
         const dateToFormat = new Date(parseInt(todo.created));
         
         return (
-            <div className="todoList">
-                <h4>My Task</h4>
+            <div className="todo-list-container">
+                <Header title="My Task" />
                 <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
                 <ul className="collection">
                     <li className="collection-item avatar">

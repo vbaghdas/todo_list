@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions';
+import Header from './header';
 
 
 class AddForm extends Component {
-
+    
     handleAddItem(vals) {
         this.props.addTodo(vals).then( () => {
             this.props.history.push('/');
@@ -17,9 +18,9 @@ class AddForm extends Component {
         const hasError = touched && error;
         return (
             <div className={`formGroup ${hasError ? 'formError' : ''}`}>
-                <label className="formLabel">{label}</label>
-                <input {...input} className={`formControl ${hasError ? 'formControlError' : ''}`} type={type ? type: 'text'}/>
-                <div className="formFeedback">{hasError}</div>
+                <label className="form-label">{label}</label>
+                <input {...input} className={`form-control ${hasError ? 'form-control-error' : ''}`} type={type ? type: 'text'}/>
+                <div className="form-feedback">{hasError}</div>
             </div>
         )
     }
@@ -27,8 +28,8 @@ class AddForm extends Component {
     render() {
         const { handleSubmit, reset } = this.props;
         return (
-            <div className="todoList">
-                <h4>Add Task</h4>
+            <div className="todo-list-container">
+                <Header title="Add Task" back={true} />
                 <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
                 <form onSubmit={handleSubmit((vals) => this.handleAddItem(vals))}>
                     <div className="input-field col s6">

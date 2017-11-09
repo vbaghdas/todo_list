@@ -2,9 +2,11 @@ import React, { Component } from 'react' ;
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getAll } from '../actions';
+import Header from "./header";
 import ListItem from './list_item';
 
 class TodoList extends Component {
+    
     componentWillMount() {
         this.props.getAll();
     }
@@ -21,10 +23,10 @@ class TodoList extends Component {
         });
 
         return (
-            <div className="todoList">
-                <h4>My List</h4>
+            <div className="todo-list-container">
+                    <Header title="TODO List"/>
                     <ul className="collection">
-                        {todosList}
+                        { todosList }
                     </ul>
                 <div className="">
                     <Link to="/add-todo">

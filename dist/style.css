@@ -1,10 +1,24 @@
+/*==========================================================
+
+                TODO List Style Sheet
+
+===========================================================*/
 body {
     background: url(bgimage.jpg);
+    text-shadow: 2px 2px 2px #222;
     color: #FFF;
 }
 
+/* Todo List */
+.todo-list-container {
+    padding: 15px;
+}
+
 /* Navbar */
-nav i.material-icons {
+.nav-wrapper {
+    margin-bottom: 35px;
+}
+.nav-wrapper i.material-icons {
     font-size: 35px;
 }
 .clock {
@@ -13,19 +27,15 @@ nav i.material-icons {
 
 /* All Buttons */
 .btn {
-    margin: 15px 15px 15px 0;
-}
-
-/* Todo List */
-.todoList {
-    margin-top: 50px;
+    margin: 25px 15px 15px 0;
+    text-shadow: 2px 2px 2px #222;
 }
 
 /* Form */
-.formLabel.active {
+.form-label.active {
     color: #26a69a;
 }
-.formFeedback {
+.form-feedback {
     margin-bottom: 25px;
     color: #EA3814;
 }
@@ -34,6 +44,28 @@ nav i.material-icons {
 .collection {
     margin-top: 25px;
 }
+.collection .collection-item {
+    line-height: 2.5rem;
+ }
 .collection .collection-item.avatar {
     background-color: rgba(34,34,34,0.5);
+    min-height: 62px;
+}
+
+/* Links and Icons */
+a, a:hover, a:focus {
+    color: inherit;
+    cursor: pointer;
+    vertical-align: middle;
+    text-decoration: none;
+}
+i:hover {
+    transform: scale(1.2);
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+i:active {
+    text-shadow: none;
 }
