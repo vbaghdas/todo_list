@@ -4,7 +4,7 @@
 
 ===========================================================*/
 body {
-    background: url(bgimage.jpg);
+    background: url(bgimage.jpg) no-repeat fixed center;
     text-shadow: 2px 2px 2px #222;
     color: #FFF;
 }
@@ -58,13 +58,6 @@ a, a:hover, a:focus {
     cursor: pointer;
     vertical-align: middle;
     text-decoration: none;
-}
-i:hover {
-    transform: scale(1.2);
-    transition: all .5s ease-in-out;
-    -webkit-transition: all .5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
 }
 i:active {
     text-shadow: none;

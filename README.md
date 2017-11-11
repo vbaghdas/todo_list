@@ -21,4 +21,4 @@ Utilized Axios calls to post, get, and delete tasks from a Mongo database, and R
 > 6. Open a browser and navigate to `localhost:3000`
 
 ##### DEMO IMAGE: 
-![alt text](http://dev.vachebaghdassarian.com/images/portfolio/todo_list.png "TODO List")
+![alt text](/demo_image.png "TODO List")
