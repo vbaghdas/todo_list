@@ -26,7 +26,7 @@ const Header = (props) => {
 
     return (
         <nav>
-            <div className="nav-wrapper teal lighten-1">
+            <div className="nav-wrapper">
                 <Clock />
                 <span className="brand-logo center">{props.title}</span>
                 <ul className="right">

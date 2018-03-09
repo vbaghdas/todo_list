@@ -30,7 +30,7 @@ class AddForm extends Component {
         return (
             <div className="todo-list-container">
                 <Header title="Add Task" back={true} />
-                <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
+                <Link to="/" className="btn back-btn waves-effect waves-light"><i className="material-icons left">backspace</i>back</Link>
                 <form onSubmit={handleSubmit((vals) => this.handleAddItem(vals))}>
                     <div className="input-field col s6">
                         <Field name="title" component={this.renderInput} type="text" label="Title"/>
