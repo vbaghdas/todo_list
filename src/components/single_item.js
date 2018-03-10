@@ -45,7 +45,7 @@ class SingleItem extends Component {
         return (
             <div className="todo-list-container">
                 <Header title="My Task" />
-                <Link to="/" className="btn"><i className="material-icons left">backspace</i>back</Link>
+                <Link to="/" className="btn back-btn waves-effect waves-light"><i className="material-icons left">backspace</i>back</Link>
                 <ul className="collection">
                     <li className="collection-item avatar">
                         <i className={`material-icons circle lighten-1 ${todo.complete ? 'blue white-text' : 'red white-text'}`}>
