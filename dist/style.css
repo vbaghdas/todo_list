@@ -42,16 +42,16 @@ body {
 }
 
 /* Form */
-.form-control {
-    border-bottom: 1px solid #41a2f5!important;
-    box-shadow: 0 1px 0 0 #41a2f5!important;
-}
 .form-label.active {
     color: #41a2f5;
 }
 .form-feedback {
     margin-bottom: 25px;
     color: #EA3814;
+}
+input[type=text]:focus:not([readonly]){
+    border-bottom: 1px solid #41a2f5!important;
+    box-shadow: 0 1px 0 0 #41a2f5!important;
 }
 .progress {
     background-color: rgba(55,140,214, 0.5);
